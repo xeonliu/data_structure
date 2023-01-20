@@ -91,6 +91,7 @@ void DLList<elemType>::clear() {
         delete p;
         p = q;
     }
+    currentLength = 0;
 }
 
 template<class elemType>
@@ -98,22 +99,24 @@ int DLList<elemType>::length() const {
     return currentLength;
 }
 
+/**在双链表中，不需要查找前一节点，可以直接删除当前节点*/
 template<class elemType>
 void DLList<elemType>::insert(int i, const elemType &x) {
-    node *p = move(i-1);
-    node *q = new node(x,p,p->next);
-    p->next = q;
-    q->next->prev = q;
+    node *p = move(i);
+    //insert before p;
+    node *q = new node(x,p->prev,p); //2 connections
+    //2 other connections
+    p->prev = q;
+    q->prev->next = q;
     ++currentLength;
 }
 
 template<class elemType>
 void DLList<elemType>::remove(int i) {
-    node *p = move(i-1);
-    node *q = p->next;
-    p->next = q->next;
-    q->next->prev = p;
-    delete q;
+    node *p = move(i);
+    p->next->prev = p->prev;
+    p->prev->next = p->next;
+    delete p;
     --currentLength;
 }
 

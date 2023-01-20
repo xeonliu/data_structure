@@ -21,14 +21,20 @@ TEST_CASE("Sequence List") {
         a.insert(0,0);
         CHECK(a.length()==5);
     }
+    SUBCASE("clear"){
+        a.clear();
+        CHECK(a.length()==0);
+    }
     SUBCASE("insert"){
         a.insert(3,5);
         CHECK(a.visit(3)==5);
         CHECK(a.visit(4)==4);
+        CHECK(a.length()==5);
     }
     SUBCASE("remove"){
         a.remove(2);
         CHECK(a.visit(2)==4);
+        CHECK(a.length()==3);
     }
     SUBCASE("search"){
         CHECK(a.search(3)==2);
