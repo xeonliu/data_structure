@@ -1,0 +1,8 @@
+//
+// Created by SJTU on 2023/1/20.
+//
+
+#ifndef NEW_DATASTRUCTURE_STACK_H
+#define NEW_DATASTRUCTURE_STACK_H
+
+#endif //NEW_DATASTRUCTURE_STACK_H
