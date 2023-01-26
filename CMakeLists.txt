@@ -9,6 +9,9 @@ add_executable(datastructure_run ${SOURCE_FILES})
 include_directories(ListLib)
 add_subdirectory(ListLib)
 
-target_link_libraries(datastructure_run ListLib)
+include_directories(StackLib)
+add_subdirectory(StackLib)
+
+target_link_libraries(datastructure_run ListLib StackLib)
 
 add_subdirectory(Doctest)

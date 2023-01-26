@@ -1,2 +1,2 @@
-add_executable(Doctests_run ListTest.cpp)
-target_link_libraries(Doctests_run ListLib)
+add_executable(Doctests_run ListTest.cpp StackTest.cpp)
+target_link_libraries(Doctests_run ListLib StackLib)
