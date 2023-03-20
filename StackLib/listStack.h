@@ -32,6 +32,7 @@ public:
 
 template<class elemType>
 LStack<elemType>::LStack() {
+    //无需头结点
     top_p = nullptr;
 }
 
