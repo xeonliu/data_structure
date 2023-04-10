@@ -1,2 +1,2 @@
-add_executable(Doctests_run QueueTest.cpp)
-target_link_libraries(Doctests_run QueueLib)
+add_executable(Doctests_run BinaryTreeTest.cpp)
+target_link_libraries(Doctests_run BTreeLib)

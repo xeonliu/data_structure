@@ -15,7 +15,10 @@ add_subdirectory(StackLib)
 include_directories(QueueLib)
 add_subdirectory(QueueLib)
 
-target_link_libraries(datastructure_run ListLib StackLib QueueLib)
+include_directories(TreeLib)
+add_subdirectory(TreeLib)
+
+target_link_libraries(datastructure_run ListLib StackLib QueueLib BTreeLib)
 
 add_subdirectory(Doctest)
 add_subdirectory(StackApplication)
